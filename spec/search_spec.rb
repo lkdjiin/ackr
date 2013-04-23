@@ -33,8 +33,7 @@ describe Search do
       Dir.chdir('spec/example1/') do
         @search = Search.new('/xavier/')
         $stdout.should_receive(:puts).with("\e[34m\e[1m\e[4mroot\e[0m")
-        # $stdout.should_receive(:puts).with("   5| \e[1mxavier\e[0m")
-        $stdout.should_receive(:puts).with("   5| xavier")
+        $stdout.should_receive(:puts).with("   5| \e[1mxavier\e[0m")
         $stdout.should_receive(:puts).with("")
         @search.run
       end

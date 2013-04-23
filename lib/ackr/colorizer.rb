@@ -23,8 +23,8 @@ module Ackr
     #
     # Returns the String line highlighted.
     def self.for_line string, search
-      reg = Regexp.new(search, Regexp::IGNORECASE)
-      string.gsub(reg) do |exp|
+      search = Regexp.new(search, Regexp::IGNORECASE) if search.is_a?(String)
+      string.gsub(search) do |exp|
         exp.bright
       end
     end
