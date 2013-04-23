@@ -1,7 +1,7 @@
 Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) 
 ================
 
-Ackr is a very light grep/ack/rak replacement for lazy developers.
+Ackr is a very small subset of grep/ack/rak, for **lazy developers**.
 
 Description
 -----------
