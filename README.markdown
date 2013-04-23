@@ -1,4 +1,4 @@
-Ackr
+Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) 
 ================
 
 Ackr is a very light grep/ack/rak replacement for lazy developers.
