@@ -38,7 +38,7 @@ module Ackr
         result = []
         File.readlines(@file).each_with_index do |line, idx|
           if line.downcase.include?(@search_term)
-            result << "#{'%4i' % idx}| #{Colorizer::for_line(line, @search_term)}"
+            result << "#{'%4i' % (idx + 1)}| #{Colorizer::for_line(line, @search_term)}"
           end
         end
         result
