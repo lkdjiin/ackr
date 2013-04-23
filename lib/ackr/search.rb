@@ -12,7 +12,8 @@ module Ackr
     #
     # search_term - The String to look for.
     def initialize search_term
-      @search_term = search_term.downcase
+      @search_term = search_term.to_regexp
+      @search_term = search_term.downcase if @search_term.nil?
       @format = Formatter.new @search_term
     end
 
@@ -36,6 +37,14 @@ module Ackr
       end
 
       def search_into_file
+        if @search_term.class == String
+          search_for_string
+        else
+          search_for_regexp
+        end
+      end
+
+      def search_for_string
         result = []
         File.readlines(@file).each_with_index do |line, idx|
           if line.downcase.include?(@search_term)
@@ -45,5 +54,15 @@ module Ackr
         result
       end
 
+      def search_for_regexp
+        result = []
+        File.readlines(@file).each_with_index do |line, idx|
+          if @search_term =~ line
+            result << @format.line(line, idx + 1)
+          end
+        end
+        result
+
+      end
   end
 end

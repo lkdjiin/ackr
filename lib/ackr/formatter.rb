@@ -20,7 +20,11 @@ module Ackr
     # Returns a formatted String.
     def line line, num
       line.strip!
-      "#{'%4i' % num}| #{Colorizer::for_line(line, @search_term)}"
+      if @search_term.class == String
+        "#{'%4i' % num}| #{Colorizer::for_line(line, @search_term)}"
+      else
+        "#{'%4i' % num}| #{line}"
+      end
     end
   end
 end
