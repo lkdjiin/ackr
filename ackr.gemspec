@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version = File.read('VERSION').strip
   s.authors = ['Xavier Nayrac']
   s.email = 'xavier.nayrac@gmail.com'
-  s.summary = ''
+  s.summary = 'Ackr is a very light grep/ack/rak replacement for lazy developers.'
   s.homepage = ''
-  s.description = %q{}
+  s.description = %q{Ackr is a very light grep/ack/rak replacement for lazy developers.}
 	
 	readmes = FileList.new('*') do |list|
 		list.exclude(/(^|[^.a-z])[a-z]+/)
@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
 	s.license = 'MIT'
 	s.required_ruby_version = '>= 1.9.2'
 	s.executables = ['ackr']
+  s.add_dependency 'rainbow', '>= 1.1.4'
 end

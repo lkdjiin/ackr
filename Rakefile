@@ -10,7 +10,7 @@ task :default => :spec
 
 desc 'Test GEM with rspec'
 RSpec::Core::RakeTask.new(:spec) do |t|
-  t.rspec_opts = ['--color --format documentation']
+  t.rspec_opts = ['--color']
 end
 
 desc 'Check for code smells'

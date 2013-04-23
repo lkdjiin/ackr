@@ -5,3 +5,16 @@ $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 $ACKR_PATH = File.expand_path(File.dirname(__FILE__)) + '/..'
 
 require 'ackr'
+
+if ARGV[0].nil?
+  puts "usage:
+
+  ackr search_string
+
+  ...OR...
+
+  ackr /regex/
+  "
+else
+  Ackr::Finder.new(ARGV[0].dup).run
+end

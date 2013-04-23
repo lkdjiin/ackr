@@ -1,17 +1,24 @@
 Ackr
 ================
 
+Ackr is a very light grep/ack/rak replacement for lazy developers.
+
 Description
 -----------
-TODO
+
+TODO. Work in progress.
+
+Run on linux. Maybe run on mac os. I guess it doesn't run on windows.
 
 Install
 -------------------------
 
+    gem install ackr
 
 Usage
 --------------------------
 
+TODO. Work in progress.
 
 
 Dependencies
