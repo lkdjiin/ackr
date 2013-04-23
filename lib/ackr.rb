@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-require 'ackr/finder'
+require 'ackr/search'
 require 'ackr/colorizer'
 
 module Ackr
@@ -20,7 +20,8 @@ module Ackr
   # based on Perl's -B switch).
   #
   def self.binary?(file)
-    s = (File.read(file, File.stat(file).blksize) || "").split(//)
-    ((s.size - s.grep(" ".."~").size) / s.size.to_f) > 0.30
+    str = (File.read(file, File.stat(file).blksize) || "").split(//)
+    size = str.size
+    ((size - str.grep(" ".."~").size) / size.to_f) > 0.30
   end
 end

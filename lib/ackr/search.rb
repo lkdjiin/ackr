@@ -1,0 +1,48 @@
+# -*- encoding: utf-8 -*-
+
+module Ackr
+
+  # Search for an expression into all text files under current
+  # directory.
+  class Search
+
+    # Public:
+    #
+    # search_term - The String to look for.
+    def initialize search_term
+      @search_term = search_term.downcase
+    end
+
+    # Public: Launch the search.
+    def run
+      Dir.glob('**/*').each do |file|
+        next if File.directory?(file)
+        next if Ackr::binary?(file)
+        @file = file
+        search
+      end
+    end
+
+    private
+
+      def search
+        results = search_into_file
+        unless results.empty?
+          puts Colorizer::for_file(@file)
+          results.each {|res| puts res}
+          puts ""
+        end
+      end
+
+      def search_into_file
+        result = []
+        File.readlines(@file).each_with_index do |line, idx|
+          if line.downcase.include?(@search_term)
+            result << "#{'%4i' % idx}| #{Colorizer::for_line(line, @search_term)}"
+          end
+        end
+        result
+      end
+
+  end
+end
