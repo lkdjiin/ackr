@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ['Xavier Nayrac']
   s.email = 'xavier.nayrac@gmail.com'
   s.summary = 'Ackr is a very light grep/ack/rak replacement for lazy developers.'
-  s.homepage = ''
+  s.homepage = 'https://github.com/lkdjiin/ackr'
   s.description = %q{Ackr is a very light grep/ack/rak replacement for lazy developers.}
 	
 	readmes = FileList.new('*') do |list|
