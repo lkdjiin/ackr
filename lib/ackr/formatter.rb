@@ -7,7 +7,7 @@ module Ackr
 
     # Public:
     #
-    # search_term - The String to look for.
+    # search_term - The String or Regexp to look for.
     def initialize search_term
       @search_term = search_term
     end
@@ -20,7 +20,7 @@ module Ackr
     # Returns a formatted String.
     def line line, num
       line.strip!
-      if @search_term.class == String
+      if @search_term.is_a?(String)
         "#{'%4i' % num}| #{Colorizer::for_line(line, @search_term)}"
       else
         "#{'%4i' % num}| #{line}"

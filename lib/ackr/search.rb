@@ -11,6 +11,13 @@ module Ackr
     # Public:
     #
     # search_term - The String to look for.
+    #               This param could be a 'real' string or a String
+    #               representing a regexp. If the string looks like
+    #               a regexp, it will be treated like a regexp.
+    #
+    # Examples:
+    #   Search.new("abc")
+    #   Search.new("/abc/i")
     def initialize search_term
       @search_term = search_term.to_regexp
       @search_term = search_term.downcase if @search_term.nil?
@@ -37,32 +44,21 @@ module Ackr
       end
 
       def search_into_file
-        if @search_term.class == String
-          search_for_string
+        result = []
+        File.readlines(@file).each_with_index do |line, idx|
+          found = search_into_line(line)
+          result << @format.line(line, idx + 1) if found
+        end
+        result
+      end
+
+      def search_into_line line
+        if @search_term.is_a?(String)
+          line.downcase.include?(@search_term)
         else
-          search_for_regexp
+          @search_term =~ line
         end
       end
 
-      def search_for_string
-        result = []
-        File.readlines(@file).each_with_index do |line, idx|
-          if line.downcase.include?(@search_term)
-            result << @format.line(line, idx + 1)
-          end
-        end
-        result
-      end
-
-      def search_for_regexp
-        result = []
-        File.readlines(@file).each_with_index do |line, idx|
-          if @search_term =~ line
-            result << @format.line(line, idx + 1)
-          end
-        end
-        result
-
-      end
   end
 end
