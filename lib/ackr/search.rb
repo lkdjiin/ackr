@@ -13,6 +13,7 @@ module Ackr
     # search_term - The String to look for.
     def initialize search_term
       @search_term = search_term.downcase
+      @format = Formatter.new @search_term
     end
 
     # Public: Launch the search.
@@ -38,7 +39,7 @@ module Ackr
         result = []
         File.readlines(@file).each_with_index do |line, idx|
           if line.downcase.include?(@search_term)
-            result << "#{'%4i' % (idx + 1)}| #{Colorizer::for_line(line, @search_term)}"
+            result << @format.line(line, idx + 1)
           end
         end
         result

@@ -3,6 +3,7 @@
 require 'ackr/search'
 require 'ackr/colorizer'
 require 'ackr/finder'
+require 'ackr/formatter'
 
 module Ackr
   # Method taken from: https://github.com/djberg96/ptools
