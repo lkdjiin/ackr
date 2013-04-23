@@ -2,8 +2,10 @@
 
 module Ackr
 
-  # Search for an expression into all text files under current
-  # directory.
+  # Search for an expression into all text files under
+  # current directory AND print results.
+  #
+  # FIXME Separate behaviours: search / print
   class Search
 
     # Public:
@@ -15,9 +17,7 @@ module Ackr
 
     # Public: Launch the search.
     def run
-      Dir.glob('**/*').each do |file|
-        next if File.directory?(file)
-        next if Ackr::binary?(file)
+      Finder::all_files do |file|
         @file = file
         search
       end

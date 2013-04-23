@@ -2,6 +2,7 @@
 
 require 'ackr/search'
 require 'ackr/colorizer'
+require 'ackr/finder'
 
 module Ackr
   # Method taken from: https://github.com/djberg96/ptools
