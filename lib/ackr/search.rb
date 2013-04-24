@@ -53,10 +53,13 @@ module Ackr
       end
 
       def search_into_line line
-        if @search_term.is_a?(String)
-          line.downcase.include?(@search_term)
-        else
-          @search_term =~ line
+        begin
+          if @search_term.is_a?(String)
+            line.downcase.include?(@search_term)
+          else
+            @search_term =~ line
+          end
+        rescue #Exception => ex
         end
       end
 

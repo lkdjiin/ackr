@@ -24,8 +24,10 @@ module Ackr
     # Returns the String line highlighted.
     def self.for_line string, search
       search = Regexp.new(search, Regexp::IGNORECASE) if search.is_a?(String)
-      string.gsub(search) do |exp|
-        exp.bright
+      begin
+        string.gsub(search) {|exp| exp.bright }
+      rescue Exception => ex
+        puts "Error ".background(:red) + ex.message
       end
     end
   end

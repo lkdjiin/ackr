@@ -16,10 +16,11 @@ most possible simple tool.
 
 Here comes ackr:
 
-  * Ackr look for a search string into all text files, into all subfolders, 
+  * Ackr look for a search term into all text files, into all subfolders, 
     from the working directory
-  * Ackr is case insensitive
-  * Ackr has no options
+  * A search term is either **a string** (in this case Ackr is *case insensitive*)
+    or **a regexp**
+  * Ackr has **no options**
   * Ackr doesn't look into hidden folders/files
   * Search term is displayed in bold font
 
@@ -33,6 +34,8 @@ Install
 Usage
 --------------------------
 
+To look for a string (case insensitive):
+
     $ ackr fixme
     lib/ackr/search.rb
        8|   # FIXME Separate behaviours: search / print
@@ -40,17 +43,17 @@ Usage
     README.markdown
       21| $ackr fixme
 
+Using a regexp (same search as above):
+
+    $ ackr /fixme/i
 
 More to come
 --------------------------
 
-Next versions may include
+Next version may include
 
-  * regexp
   * fuzzy search
   * configuration
-
-All of that without a single option, of course.
 
 Dependencies
 --------------------------
@@ -71,7 +74,7 @@ Dependencies
 2. Give me ideas
 3. Correct my poor english syntax
 4. Blog about ackr
-5. Tell ackr to your friends or colleague
+5. Tell ackr to your friends or colleagues
 
 License
 --------------------------

@@ -19,7 +19,11 @@ module Ackr
     #
     # Returns a formatted String.
     def line line, num
-      line.strip!
+      begin
+        line.strip!
+      rescue Exception => ex
+        puts "Error ".background(:red) + ex.message
+      end
       "#{'%4i' % num}| #{Colorizer::for_line(line, @search_term)}"
     end
   end
