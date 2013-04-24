@@ -29,5 +29,18 @@ describe Finder do
       @results.include?('folder/folder/level2').should be_true
     end
 
+    it "should not returns files in tmp/" do
+      @results.include?('tmp/tmp.txt').should be_false
+    end
+
+    it "should not returns files in CVS/" do
+      @results.include?('CVS/cvs.txt').should be_false
+    end
+
+    it "should not returns files in CVS/ subfolders" do
+      @results.include?('folder/CVS/cvs.txt').should be_false
+      @results.include?('folder/folder/CVS/cvs.txt').should be_false
+    end
+
   end
 end

@@ -7,6 +7,10 @@ require 'ackr/finder'
 require 'ackr/formatter'
 
 module Ackr
+
+  # Ackr won't search into this directories.
+  EXCLUDE_DIRS = %w(blib CVS _darcs RCS SCCS pkg tmp temp log)
+
   # Method taken from: https://github.com/djberg96/ptools
   # --
   #

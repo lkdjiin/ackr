@@ -16,6 +16,10 @@ module Ackr
     def self.all_files
       Dir.glob('**/*').each do |file|
         next if (File.directory?(file) || Ackr::binary?(file))
+        next if EXCLUDE_DIRS.any? do |dir|
+          file.start_with?(dir + File::Separator) || 
+            file.include?(File::Separator + dir + File::Separator)
+        end
         yield(file)
       end
     end

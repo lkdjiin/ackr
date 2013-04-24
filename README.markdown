@@ -1,7 +1,7 @@
 Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) 
 ================
 
-Ackr is a very small subset of grep/ack/rak, for **lazy developers**.
+Ackr is a minimalist subset of grep/ack/rak, for **lazy developers**.
 
 Description
 -----------
@@ -26,6 +26,9 @@ Here comes ackr:
 
 It runs on linux. It maybe runs on mac os. I guess it won't run on windows.
 
+And one more thing: ackr **is not a replacement to grep/ack**. If you
+need grep power, just use grep!
+
 Install
 -------------------------
 
@@ -46,6 +49,29 @@ To look for a string (case insensitive):
 Using a regexp (same search as above):
 
     $ ackr /fixme/i
+
+### Ignored files and directories
+
+Ackr doesn't look into hidden files or directories. In addition, ackr
+ignores the following list of directories:
+  
+  * `blib`
+  * `CVS`
+  * `_darcs` 
+  * `RCS`
+  * `SCCS`
+  * `pkg`
+  * `tmp`
+  * `temp`
+  * `log`
+
+If you really want to search into a such directory anyway, simply `cd`
+into it and make the search.
+
+### Caveats
+
+Ackr is young. Ackr is slow, very slow...
+I will consider performance in a future version.
 
 More to come
 --------------------------
@@ -70,11 +96,11 @@ Dependencies
 
 ### There is many other ways to contibute to ackr
 
-1. Reports any bug
+1. Report any bug
 2. Give me ideas
 3. Correct my poor english syntax
 4. Blog about ackr
-5. Tell ackr to your friends or colleagues
+5. Tell ackr to your friends and colleagues
 
 License
 --------------------------

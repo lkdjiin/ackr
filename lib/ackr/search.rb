@@ -59,7 +59,7 @@ module Ackr
           else
             @search_term =~ line
           end
-        rescue #Exception => ex
+        rescue
         end
       end
 
