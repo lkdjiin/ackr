@@ -112,4 +112,4 @@ Questions and/or Comments
 --------------------------
 
 Feel free to email [Xavier Nayrac](mailto:xavier.nayrac@gmail.com)
-with any questions.
+with any questions, or contact me on [twitter](https://twitter.com/lkdjiin).
