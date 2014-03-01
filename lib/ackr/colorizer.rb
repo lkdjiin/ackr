@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 
+gem 'rainbow', '= 1.1.4'
 require 'rainbow'
 
 module Ackr
