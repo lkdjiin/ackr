@@ -1,4 +1,4 @@
-Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) 
+Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) [![Gem Version](https://badge.fury.io/rb/ackr.png)](http://badge.fury.io/rb/ackr)
 ================
 
 Ackr is a minimalist subset of grep/ack/rak, for **lazy developers**.
