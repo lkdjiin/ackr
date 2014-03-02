@@ -1,4 +1,4 @@
-Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) 
+Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) [![Gem Version](https://badge.fury.io/rb/ackr.png)](http://badge.fury.io/rb/ackr)
 ================
 
 Ackr is a minimalist subset of grep/ack/rak, for **lazy developers**.
@@ -50,6 +50,29 @@ Using a regexp (same search as above):
 
     $ ackr /fixme/i
 
+### Tips
+
+To look for a string containing spaces, quote the string:
+
+    $ ackr 'string with spaces'
+
+To look for a regex containing spaces, quote the regex:
+
+    $ ackr '/regex with spaces/'
+
+or escape the spaces:
+
+    $ ackr /regex\ with\ spaces/
+
+When your search string contains some characters special to Bash you
+will have troubles. For example, instead of:
+
+    $ ackr &:active
+
+you must use:
+
+    $ ackr '&:active'
+
 ### Ignored files and directories
 
 Ackr doesn't look into hidden files or directories. In addition, ackr
@@ -73,14 +96,6 @@ into it and make the search.
 Ackr is young. Ackr is slow, very slow...
 I will consider performance in a future version.
 
-More to come
---------------------------
-
-Next version may include
-
-  * fuzzy search
-  * configuration
-
 Dependencies
 --------------------------
 
@@ -89,7 +104,7 @@ Dependencies
 ## Contributing
 
 1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
+2. Create your feature branch (`git checkout -b my-new-feature develop`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
