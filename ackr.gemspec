@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version = File.read('VERSION').strip
   s.authors = ['Xavier Nayrac']
   s.email = 'xavier.nayrac@gmail.com'
-  s.summary = 'Ackr is a very small subset of grep/ack/rak, for lazy developers'
+  s.summary = 'The smallest subset of ack/rak/ag. For lazy developers'
   s.homepage = 'https://github.com/lkdjiin/ackr'
-  s.description = %q{Ackr is a very small subset of grep/ack/rak, for lazy developers}
+  s.description = %q{Ackr is the smallest subset of ack/rak/ag I can think of. For lazy developers}
 	
 	readmes = FileList.new('*') do |list|
 		list.exclude(/(^|[^.a-z])[a-z]+/)
