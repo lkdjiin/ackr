@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 	end.to_a
   s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*'].to_a + readmes
 	s.license = 'MIT'
-	s.required_ruby_version = '>= 1.9.2'
+	s.required_ruby_version = '>= 1.9.3'
 	s.executables = ['ackr']
-  s.add_dependency 'rainbow', '1.1.4'
+  s.add_dependency 'rainbow', '1.99.2'
 end

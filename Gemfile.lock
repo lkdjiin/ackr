@@ -2,13 +2,13 @@ PATH
   remote: .
   specs:
     ackr (0.2.2)
-      rainbow (= 1.1.4)
+      rainbow (= 1.99.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
-    rainbow (1.1.4)
+    rainbow (1.99.2)
     rake (10.1.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
