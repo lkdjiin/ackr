@@ -1,7 +1,7 @@
-Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) 
+Ackr [![Build Status](https://travis-ci.org/lkdjiin/ackr.png)](https://travis-ci.org/lkdjiin/ackr) [![Gem Version](https://badge.fury.io/rb/ackr.png)](http://badge.fury.io/rb/ackr)
 ================
 
-Ackr is a minimalist subset of grep/ack/rak, for **lazy developers**.
+Ackr is the very minimum subset of grep/ack/rak I can think of for **lazy developers**.
 
 Description
 -----------
@@ -24,7 +24,7 @@ Here comes ackr:
   * Ackr doesn't look into hidden folders/files
   * Search term is displayed in bold font
 
-It runs on linux. It maybe runs on mac os. I guess it won't run on windows.
+It runs on unixes. I guess it won't run on windows.
 
 And one more thing: ackr **is not a replacement to grep/ack**. If you
 need grep power, just use grep!
@@ -44,11 +44,39 @@ To look for a string (case insensitive):
        8|   # FIXME Separate behaviours: search / print
 
     README.markdown
-      21| $ackr fixme
+      21| $ ackr fixme
 
 Using a regexp (same search as above):
 
     $ ackr /fixme/i
+
+If you want to search only in a specific directory, you can temporarily
+`cd` into it like this:
+
+    (cd your/path && ackr yoursearch)
+
+### Tips
+
+To look for a string containing spaces, quote the string:
+
+    $ ackr 'string with spaces'
+
+To look for a regex containing spaces, quote the regex:
+
+    $ ackr '/regex with spaces/'
+
+or escape the spaces:
+
+    $ ackr /regex\ with\ spaces/
+
+When your search string contains some characters special to Bash you
+will have troubles. For example, instead of:
+
+    $ ackr &:active
+
+you must use:
+
+    $ ackr '&:active'
 
 ### Ignored files and directories
 
@@ -70,26 +98,18 @@ into it and make the search.
 
 ### Caveats
 
-Ackr is young. Ackr is slow, very slow...
-I will consider performance in a future version.
-
-More to come
---------------------------
-
-Next version may include
-
-  * fuzzy search
-  * configuration
+Ackr is slow, very slow...
+May be I will consider performance in a future version.
 
 Dependencies
 --------------------------
 
-  * ruby >= 1.9.2
+  * ruby >= 1.9.3
 
 ## Contributing
 
 1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
+2. Create your feature branch (`git checkout -b my-new-feature develop`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request

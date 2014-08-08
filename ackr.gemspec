@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version = File.read('VERSION').strip
   s.authors = ['Xavier Nayrac']
   s.email = 'xavier.nayrac@gmail.com'
-  s.summary = 'Ackr is a very small subset of grep/ack/rak, for lazy developers'
+  s.summary = 'The smallest subset of ack/rak/ag. For lazy developers'
   s.homepage = 'https://github.com/lkdjiin/ackr'
-  s.description = %q{Ackr is a very small subset of grep/ack/rak, for lazy developers}
+  s.description = %q{Ackr is the smallest subset of ack/rak/ag I can think of. For lazy developers}
 	
 	readmes = FileList.new('*') do |list|
 		list.exclude(/(^|[^.a-z])[a-z]+/)
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 	end.to_a
   s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*'].to_a + readmes
 	s.license = 'MIT'
-	s.required_ruby_version = '>= 1.9.2'
+	s.required_ruby_version = '>= 1.9.3'
 	s.executables = ['ackr']
-  s.add_dependency 'rainbow', '1.1.4'
+  s.add_dependency 'rainbow', '1.99.2'
 end
