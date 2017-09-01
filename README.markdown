@@ -101,27 +101,6 @@ into it and make the search.
 Ackr is slow, very slow...
 May be I will consider performance in a future version.
 
-Dependencies
---------------------------
-
-  * ruby >= 1.9.3
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature develop`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
-
-### There is many other ways to contibute to ackr
-
-1. Report any bug
-2. Give me ideas
-3. Correct my poor english syntax
-4. Blog about ackr
-5. Tell ackr to your friends and colleagues
-
 License
 --------------------------
 
