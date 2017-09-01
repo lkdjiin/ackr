@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 require 'ackr/extensions/string'
 require 'ackr/search'
 require 'ackr/colorizer'
