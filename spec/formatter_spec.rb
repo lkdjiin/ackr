@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 require './spec/helper'
 
 describe Formatter do
@@ -21,18 +19,17 @@ describe Formatter do
 
     it "should colorize search term" do
       result = @format.line("abc search", 1)
-      expect(result).to eq("   1| abc " + "search".bright)
+      expect(result).to eq("   1| abc " + Rainbow("search").bright)
     end
 
     it "should suppress trailing spaces" do
       result = @format.line("     abc search", 1)
-      expect(result).to eq("   1| abc " + "search".bright)
+      expect(result).to eq("   1| abc " + Rainbow("search").bright)
     end
 
     it "should suppress trailing tabs" do
       result = @format.line("\t\tabc search", 1)
-      expect(result).to eq("   1| abc " + "search".bright)
+      expect(result).to eq("   1| abc " + Rainbow("search").bright)
     end
-
   end
 end

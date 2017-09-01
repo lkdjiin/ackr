@@ -1,6 +1,4 @@
-# -*- encoding: utf-8 -*-
-
-gem 'rainbow', '= 1.99.2'
+gem 'rainbow', '~> 2.2'
 require 'rainbow'
 
 module Ackr
@@ -14,7 +12,7 @@ module Ackr
     #
     # Returns the String filename highlighted.
     def self.for_file string
-      string.foreground(:blue).bright.underline
+      Rainbow(string).fg(:blue).bright.underline
     end
 
     # Public: Highlight a matched file line.
@@ -26,9 +24,9 @@ module Ackr
     def self.for_line string, search
       search = Regexp.new(search, Regexp::IGNORECASE) if search.is_a?(String)
       begin
-        string.gsub(search) {|exp| exp.bright }
+        string.gsub(search) {|exp| Rainbow(exp).bright }
       rescue Exception => ex
-        puts "Error ".background(:red) + ex.message
+        puts Rainbow("Error ").bg(:red) + ex.message
       end
     end
   end
