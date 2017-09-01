@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
 	s.license = 'MIT'
 	s.required_ruby_version = '>= 2.2.0'
 	s.executables = ['ackr']
-  s.add_dependency 'rainbow', '1.99.2'
+  s.add_dependency 'rainbow', '~> 2.2'
 end
