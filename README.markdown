@@ -16,12 +16,12 @@ most possible simple tool.
 
 Here comes ackr:
 
-  * Ackr look for a search term into all text files, into all subfolders, 
+  * Ackr look for a search term into all text files, into all subfolders,
     from the working directory
   * A search term is either **a string** (in this case Ackr is *case insensitive*)
     or **a regexp**
   * Ackr has **no options**
-  * Ackr doesn't look into hidden folders/files
+  * Ackr doesn't search inside hidden folders, **but** looks to hidden files
   * Search term is displayed in bold font
 
 It runs on unixes. I guess it won't run on windows.
@@ -80,12 +80,12 @@ you must use:
 
 ### Ignored files and directories
 
-Ackr doesn't look into hidden files or directories. In addition, ackr
+Ackr doesn't look into directories. In addition, ackr
 ignores the following list of directories:
-  
+
   * `blib`
   * `CVS`
-  * `_darcs` 
+  * `_darcs`
   * `RCS`
   * `SCCS`
   * `pkg`
@@ -93,7 +93,7 @@ ignores the following list of directories:
   * `temp`
   * `log`
 
-If you really want to search into a such directory anyway, simply `cd`
+If you want to search into such a directory anyway, simply `cd`
 into it and make the search.
 
 ### Caveats
