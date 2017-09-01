@@ -13,33 +13,33 @@ describe Finder do
     end
 
     it "should not returns a directory" do
-      @results.include?('folder/').should be_false
+      expect(@results.include?('folder/')).to be_falsey
     end
     
     it "should not returns a binary" do
-      @results.include?('ackr-0.1.gem').should be_false
+      expect(@results.include?('ackr-0.1.gem')).to be_falsey
     end
 
     it "should returns root file" do
-      @results.include?('root').should be_true
+      expect(@results.include?('root')).to be_truthy
     end
 
     it "should returns files in subfolders" do
-      @results.include?('folder/level1').should be_true
-      @results.include?('folder/folder/level2').should be_true
+      expect(@results.include?('folder/level1')).to be_truthy
+      expect(@results.include?('folder/folder/level2')).to be_truthy
     end
 
     it "should not returns files in tmp/" do
-      @results.include?('tmp/tmp.txt').should be_false
+      expect(@results.include?('tmp/tmp.txt')).to be_falsey
     end
 
     it "should not returns files in CVS/" do
-      @results.include?('CVS/cvs.txt').should be_false
+      expect(@results.include?('CVS/cvs.txt')).to be_falsey
     end
 
     it "should not returns files in CVS/ subfolders" do
-      @results.include?('folder/CVS/cvs.txt').should be_false
-      @results.include?('folder/folder/CVS/cvs.txt').should be_false
+      expect(@results.include?('folder/CVS/cvs.txt')).to be_falsey
+      expect(@results.include?('folder/folder/CVS/cvs.txt')).to be_falsey
     end
 
   end
