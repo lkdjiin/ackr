@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ackr (0.3)
+    ackr (0.3.0)
       rainbow (~> 2.2)
 
 GEM
